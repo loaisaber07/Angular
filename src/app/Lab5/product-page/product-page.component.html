@@ -1,0 +1,31 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th> 
+        <th>Expire Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+@for (item of products; track $index) {
+   <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.quantity}}</td> 
+      <td>{{item.exprireDate}}</td> 
+      
+      <td> 
+        <i class="bi bi-pencil-square mx-3" (click)="edit(item.id)"></i> 
+        <i class="bi bi-trash xm-1" (click)="Delete(item.id)"></i>
+      </td>
+     </tr>
+        
+    }
+      
+    </tbody>
+  </table>

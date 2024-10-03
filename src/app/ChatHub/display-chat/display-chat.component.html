@@ -1,0 +1,13 @@
+<p>display-chat works!</p> 
+<div class="text-center text-primary">
+Chat Hub
+</div> 
+<div *ngFor="let message of chat.message">
+    {{message}}
+</div>
+
+<form (submit)="sendMessage(userName, message)"  > 
+<input class="form-control" type="text" name="userName" [(ngModel)]="userName"> 
+<input class="form-control" type="text" name="message" [(ngModel)]="message">
+<button class="btn btn-primary" type="submit">Send</button>
+</form>
