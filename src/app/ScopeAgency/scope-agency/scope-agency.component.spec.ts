@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductPageComponent } from './product-page.component';
+import { ScopeAgencyComponent } from './scope-agency.component';
 
-describe('ProductPageComponent', () => {
-  let component: ProductPageComponent;
-  let fixture: ComponentFixture<ProductPageComponent>;
+describe('ScopeAgencyComponent', () => {
+  let component: ScopeAgencyComponent;
+  let fixture: ComponentFixture<ScopeAgencyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductPageComponent]
+      imports: [ScopeAgencyComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ProductPageComponent);
+    fixture = TestBed.createComponent(ScopeAgencyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

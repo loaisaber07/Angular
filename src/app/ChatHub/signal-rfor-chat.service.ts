@@ -19,11 +19,31 @@ private hubConnection!: signalR.HubConnection;
       .catch(err => console.log('Error while starting connection: ' + err));; 
       this.hubConnection.on('ReceiveMessage', (user: string, message: string) => {
         this.message.push(`${user}: ${message}`);
-      }) ; 
+      }) ;  
+      this.hubConnection.on('RecieveGroupMessage' , 
+        (message:string)=>{
+this.message.push(message) ; 
+
+        }
+      ) ; 
+      this.hubConnection.on('MessageGroup' , 
+        (groupname:string , connectioId:string)=>{
+this.message.push(`${groupname} : ${connectioId}`) ;
+
+        }
+      )
   } 
   public sendMessage(userName: string, message: string): void {
     this.hubConnection
       .invoke('SendMessage', userName, message)
       .catch(err => console.error(err));
+  } 
+  public joinGroup(groupname:string):void
+  {
+this.hubConnection.invoke('AddToGroup' , groupname) ;
+  } 
+  public sendMessageToGroup(groupname:string , message:string):void
+  {
+    this.hubConnection.invoke('sendMessageToSpecificGroup' , groupname , message);
   }
 }

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
-import { ProductPageComponent } from './Lab5/product-page/product-page.component';
 import { DisplayChatComponent } from './ChatHub/display-chat/display-chat.component';
+import { ScopeAgencyComponent } from './ScopeAgency/scope-agency/scope-agency.component';
+import { ScopeFormComponent } from './InvoiceForm/scope-form/scope-form.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ ProductPageComponent , DisplayChatComponent
+  imports: [   DisplayChatComponent , ScopeAgencyComponent,ScopeFormComponent
   ] ,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
